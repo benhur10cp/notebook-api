@@ -35,6 +35,7 @@ gem 'jwt'
 
 gem 'devise_token_auth'
 gem 'devise-i18n'
+gem 'versionist'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

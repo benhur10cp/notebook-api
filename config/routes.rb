@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :auths, only: [:create]
   resources :kinds
 
-  scope module: 'v1' do
-    resources :contacts, :constraints => lambda {|request| request.params[:version] == '1'} do
+  api_version(:module => 'v1', :parameter => {:name => 'version', :value => '1'}) do
+    resources :contacts do
       resource :kind, only: [:show]
       resource :kind, only: [:show], path: 'relationships/kind'
 
@@ -21,8 +21,9 @@ Rails.application.routes.draw do
     end
   end
 
-  scope module: 'v2' do
-    resources :contacts, :constraints => lambda {|request| request.params[:version] == '2'} do
+
+  api_version(:module => 'v2', :parameter => {:name => 'version', :value => '2'}) do
+    resources :contacts do
       resource :kind, only: [:show]
       resource :kind, only: [:show], path: 'relationships/kind'
 
@@ -37,5 +38,5 @@ Rails.application.routes.draw do
 
     end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
