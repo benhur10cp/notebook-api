@@ -7,6 +7,7 @@ module V1
     def index
       @contacts = Contact.all.page(params.dig(:page, :number) ? params[:page][:number] : 1).per(params[:page].try(:[], :size))
 
+      # cache control expires_in 30.seconds, puclic: true
       #paginate json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
       render json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
     end
