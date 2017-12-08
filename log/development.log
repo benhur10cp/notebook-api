@@ -5839,3 +5839,182 @@ Processing by V1::ContactsController#index as JSON
 Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/v1/contacts" for 127.0.0.1 at 2017-12-08 10:40:12 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/v1/contacts_controller.rb:7:in `index'
+Started GET "/v1/contacts" for 127.0.0.1 at 2017-12-08 10:42:42 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 1]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 2]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 3]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 4]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 5]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (32.67ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/contacts" for 127.0.0.1 at 2017-12-08 10:42:44 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 1]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 2]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 3]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 4]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 5]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (16.08ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v1/contacts?page%5Bnumber%5D=1&page%5Bsize%5D=5" for 127.0.0.1 at 2017-12-08 10:43:16 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"page"=>{"number"=>"1", "size"=>"5"}, "contact"=>{}}
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 1]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 2]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 3]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 4]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 5]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (19.23ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v1/contacts?page%5Bnumber%5D=2&page%5Bsize%5D=5" for 127.0.0.1 at 2017-12-08 10:43:25 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"page"=>{"number"=>"2", "size"=>"5"}, "contact"=>{}}
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 6]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 7]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 8]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 9]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 10]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (20.04ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v1/contacts?page%5Bnumber%5D=2&page%5Bsize%5D=5" for 127.0.0.1 at 2017-12-08 10:44:43 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"page"=>{"number"=>"2", "size"=>"5"}, "contact"=>{}}
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 6]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 7]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 8]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 9]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 10]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (42.37ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/v1/contacts" for 127.0.0.1 at 2017-12-08 10:44:49 -0200
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mKind Load (0.7ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 1]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 2]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 3]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 4]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 5]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (33.63ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/v1/contacts" for 127.0.0.1 at 2017-12-08 10:45:58 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 1]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 2]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 3]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 4]]
+[active_model_serializers]   [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = ?[0m  [["contact_id", 5]]
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (70.7ms)
+Completed 200 OK in 92ms (Views: 89.5ms | ActiveRecord: 2.3ms)
+
+

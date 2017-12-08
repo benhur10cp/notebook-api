@@ -37,7 +37,7 @@ gem 'devise_token_auth'
 gem 'devise-i18n'
 gem 'versionist'
 gem 'kaminari'
-gem 'api-pagination'
+#gem 'api-pagination'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

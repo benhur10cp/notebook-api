@@ -4,9 +4,10 @@ module V1
 
     # GET /contacts
     def index
-      @contacts = Contact.all.page(params[:page]).per(5)
+      @contacts = Contact.all.page(params.dig(:page, :number) ? params[:page][:number] : 1).per(params[:page].try(:[], :size))
 
-      paginate json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
+      #paginate json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
+      render json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
     end
 
     # GET /contacts/1
