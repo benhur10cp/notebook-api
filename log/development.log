@@ -6326,3 +6326,9 @@ Processing by V1::ContactsController#index as JSON
 Completed 200 OK in 72ms (Views: 62.7ms | ActiveRecord: 2.1ms)
 
 
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "AppName" => AppName
+
+ (called from <top (required)> at /home/benhur/Documents/Tutorial/notebook-api/config/environment.rb:5)
