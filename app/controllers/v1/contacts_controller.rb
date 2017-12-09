@@ -11,16 +11,17 @@ module V1
       #paginate json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
 
       #if stale?(etag: @contacts)
+
       #if stale?(last_modified: @contacts[0].updated_at)
-        render json: @contacts
+      render json: @contacts
       #end
 
-        #render json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
+      #render json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
     end
 
     # GET /contacts/1
     def show
-      render json: @contact, include: [:kind, :address, :phones] #, meta: {author: 'TESTE'} #, include: [:kind, :phones, :address]#.to_br #.attributes.merge({ name_complete: @contact.name + " " + @contact.email })
+      render json: @contact #, include: [:kind, :address, :phones] #, meta: {author: 'TESTE'} #, include: [:kind, :phones, :address]#.to_br #.attributes.merge({ name_complete: @contact.name + " " + @contact.email })
     end
 
     # POST /contacts
