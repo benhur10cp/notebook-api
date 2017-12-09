@@ -12,9 +12,9 @@ module V1
 
       #if stale?(etag: @contacts)
 
-      #if stale?(last_modified: @contacts[0].updated_at)
-      render json: @contacts
-      #end
+      if stale?(last_modified: @contacts[0].updated_at)
+        render json: @contacts
+      end
 
       #render json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
     end

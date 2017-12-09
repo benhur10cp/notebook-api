@@ -9050,3 +9050,15 @@ them to actual class references.  For example:
   "AppName" => AppName
 
  (called from <top (required)> at /home/benhur/Documents/Tutorial/notebook-api/config/environment.rb:5)
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "AppName" => AppName
+
+ (called from <top (required)> at /home/benhur/Documents/Tutorial/notebook-api/config/environment.rb:5)
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "AppName" => AppName
+
+ (called from <top (required)> at /home/benhur/Documents/Tutorial/notebook-api/config/environment.rb:5)
