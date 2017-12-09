@@ -11,9 +11,9 @@ module V1
       #paginate json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
 
       #if stale?(etag: @contacts)
-      if stale?(last_modified: @contacts[0].updated_at)
+      #if stale?(last_modified: @contacts[0].updated_at)
         render json: @contacts
-      end
+      #end
 
         #render json: @contacts #, methods: :name_complete #.map {|contact| contact.attributes.merge({ name_complete: contact.name + " " + contact.email })} #only: [:name, :email] #root: true
     end
